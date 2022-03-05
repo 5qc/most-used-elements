@@ -152,18 +152,10 @@ client.onreadystatechange = function() {
             })
         }
 
-        let elements = document.querySelector(".elements")
+        let elements = document.querySelector(".elements tbody")
         console.log(sortable[100])
         for (let i = 0; i < sortable.length; i++) {
-            let html = `<tr class="element">
-                <td class="number">
-                    ${i + 1}.
-                </td>
-                <td class="name" ${deprecated(sortable[i][0])}>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${sortable[i][0]}" target="_blank">&lt;${sortable[i][0]}&gt;</a>
-                </td>
-                <td class="times">Used ${sortable[i][1]} times</td>
-            </tr>`
+            let html = `<tr class="element"><td class="number">${i + 1}.</td><td class="name" ${deprecated(sortable[i][0])}><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${sortable[i][0]}" target="_blank">&lt;${sortable[i][0]}&gt;</a></td><td class="times">Used ${sortable[i][1]} times</td></tr>`
             elements.insertAdjacentHTML("beforeend", html)
         }
     }
